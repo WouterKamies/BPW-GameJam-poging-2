@@ -8,12 +8,22 @@ public class ScriptScript : MonoBehaviour
     public bool stay = true;
     public bool exit = true;
     public float moveSpeed;
+    public AudioSource bongoSound;
+    public float fireRate = 6f;
+    private float nextTimeToFire = 0f;
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (enter)
         {
             Debug.Log("entered");
+            if (Time.time >= nextTimeToFire)
+            {
+                nextTimeToFire = Time.time + 1f / fireRate;
+                bongoSound.Play();
+            }
+
         }
     }
 
