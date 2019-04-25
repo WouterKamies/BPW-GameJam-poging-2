@@ -1,7 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:BPW GameJam/Assets/LeapMotion.meta
+guid: c6e8375801ed84be28f219cfb84c2935
+folderAsset: yes
+DefaultImporter:
+=======
 guid: 2b11a0d835f2b4fe99e052efd09ee04d
 PrefabImporter:
   externalObjects: {}
+>>>>>>> ab6d06d4e2dad8df8e2f582aa08606d1b5721a59:BPW GameJam/Assets/NoteCollider.prefab.meta
   userData: 
-  assetBundleName: 
-  assetBundleVariant: 
