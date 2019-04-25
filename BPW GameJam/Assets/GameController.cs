@@ -18,6 +18,11 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            //Debug.Log("Check note");
+            score = 0;
+        }
         scoreText.text = string.Format("Score: {0}", score);
     }
 
