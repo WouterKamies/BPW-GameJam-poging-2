@@ -9,10 +9,30 @@ public class NoteCollider : MonoBehaviour
 
     public bool isColliding;
 
-    void OnCollisionStay(Collision collision)
+    public StreamController streamController;
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Note")
+        if (other.gameObject == streamController.lastNote)
+       {
+            isColliding = true;
+       }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject == streamController.lastNote)
         {
+            isColliding = true;
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == streamController.lastNote)
+        {
+            isColliding = false;
+        }
+    }
+
 }

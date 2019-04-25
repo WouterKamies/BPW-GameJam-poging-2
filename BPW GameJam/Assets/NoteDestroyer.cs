@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class NoteDestroyer : MonoBehaviour
 {
 
     public GameController gameController;
+    public StreamController streamController;
     public int score;
     public string displayString;
 
@@ -14,13 +16,17 @@ public class NoteDestroyer : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Note")
-        {
-            Destroy(collision.gameObject);
+
+        Destroy(other.gameObject);
             gameController.score += score;
             gameController.ShowText(displayString);
-        }
+        streamController.noteArray.Remove(streamController.lastNote);
+       if (streamController.noteArray[0] != null)
+        {
+            streamController.lastNote = streamController.noteArray[0];
+       }
+
     }
 }
